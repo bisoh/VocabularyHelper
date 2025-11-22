@@ -1,6 +1,4 @@
-﻿namespace VocabularHelper;
-
-public class ReportCardGenerator
+﻿public class ReportCardGenerator
 {
     public void GenerateReportCard(List<ExamQuestion> answerPaper)
     {

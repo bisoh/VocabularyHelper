@@ -1,22 +1,17 @@
-﻿using System.Globalization;
-using ClosedXML.Excel;
-using VocabularHelper;
+﻿
 
-// Console.WriteLine("Enter test size");
+// Console.WriteLine("Enter test size");2
 // var numberOfQuestions = Console.ReadLine();
 
 
+var selectedExam = new ExamSelector().SelectExam();
 var questions = new QuestionLoader().LoadQuestions();
 
 Console.Clear();
 
-var exam = ExamFactory.GetExamFactory(questions, 2);
+var exam = ExamFactory.GetExamFactory(selectedExam, questions, 2);
 var answerPaper = exam.Test();
 
-// foreach (var answer in answerPaper)
-// {
-//     answer.Correct = string.Compare(answer.Answer, answer.ExpectedAnswer, null, CompareOptions.IgnoreCase) == 0;
-// }
 
 
 
