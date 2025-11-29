@@ -5,7 +5,7 @@
 
 
 var selectedExam = new ExamSelector().SelectExam();
-var questions = new QuestionLoader().LoadQuestions();
+var questions = new QuestionLoader().LoadQuestions(selectedExam);
 
 Console.Clear();
 

@@ -1,6 +1,6 @@
-﻿public class EnglishToSpanishTranslationExam : ExamBase
+﻿public class SpanishToEnglishVerbTranslationExam : ExamBase
 {
-    public EnglishToSpanishTranslationExam(List<Entry> entries, int numberOfQuestions)
+    public SpanishToEnglishVerbTranslationExam(List<Entry> entries, int numberOfQuestions)
     {
         PickQuestions(entries, numberOfQuestions);
     }
@@ -9,7 +9,7 @@
     {
         foreach (var examQuestion in ExamQuestions)
         {
-            Console.Write($"What is {examQuestion.Question} in spanish? ");
+            Console.Write($"What is {examQuestion.Question} in english? ");
             examQuestion.Answer = Console.ReadLine().Trim();
         }
 
@@ -38,8 +38,8 @@
             var selectedEntry = entries[currentRandom];
             ExamQuestions.Add(new ExamQuestion()
             {
-                ExpectedAnswer = selectedEntry.spanish,
-                Question = selectedEntry.english
+                Question = selectedEntry.english,
+                ExpectedAnswer = selectedEntry.spanish
             });
         }
     }

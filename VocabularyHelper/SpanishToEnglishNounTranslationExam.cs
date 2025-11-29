@@ -1,6 +1,6 @@
-﻿public class SpanishToEnglishTranslationExam : ExamBase
+﻿public class SpanishToEnglishNounTranslationExam : ExamBase
 {
-    public SpanishToEnglishTranslationExam(List<Entry> entries, int numberOfQuestions)
+    public SpanishToEnglishNounTranslationExam(List<Entry> entries, int numberOfQuestions)
     {
         PickQuestions(entries, numberOfQuestions);
     }

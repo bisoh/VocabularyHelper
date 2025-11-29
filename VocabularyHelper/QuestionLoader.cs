@@ -2,14 +2,26 @@
 
 public class QuestionLoader
 {
-    public List<Entry> LoadQuestions()
+    public List<Entry> LoadQuestions(ExamType selectedExam)
     {
         var workbook = new XLWorkbook("../../../vocab.xlsx");
 
-        var worksheet1 = workbook.Worksheets.Worksheet(1);
+        int worksheet = 0;
+        if (selectedExam == ExamType.SpanishToEnglishNounTranslation ||
+            selectedExam == ExamType.EnglishToSpanishNounTranslation)
+        {
+            worksheet = 1;
+        }
+
+        if (selectedExam == ExamType.SpanishToEnglishVerbTranslation ||
+            selectedExam == ExamType.EnglishToSpanishVerbTranslation)
+        {
+            worksheet = 2;
+        }
+
+        var worksheet1 = workbook.Worksheets.Worksheet(worksheet);
         var rows = worksheet1.Rows();
         //var lastRowUsed = worksheet1.LastRowUsed();
-
 
         var entries = new List<Entry>();
         foreach (var row in rows)
